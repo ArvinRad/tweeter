@@ -1,0 +1,24 @@
+/*
+Styling the Header
+*/
+header {
+  height: 400px;
+  width: 100%;
+  color: #FFFF;
+  background-color: #eec641;
+  background-image: url("https://www.transparenttextures.com/patterns/60-lines.png");
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  flex-direction: column;
+}
+
+.avatar {
+  justify-content: center;
+}
+
+.name {
+  justify-content: center;
+  font-size: 20px;
+  font-family: 'Source Sans Pro', sans-serif;
+}
