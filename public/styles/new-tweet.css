@@ -13,7 +13,6 @@
 .title-text {
   display: flex;
   width: 100%;
-  justify-content: flex-start;
   flex-direction: row;
   align-content: space-between;
   align-items: flex-end;
@@ -23,15 +22,15 @@
 .textbox {
   display:flex;
   height: 50px;
-  width: 850px;
+  width: 1100px;
   border: none;
   background-color: inherit;
+  color:blue;
   align-items: stretch;
 }
 
 hr {
-  align-items: flex-start;
-  width: 100%;
+  /* width: 100%; */
   border-width: 5px;
   border-color: rgba(18, 19, 11, 0.26);
 }
