@@ -36,7 +36,8 @@
 
 .tweettext {
   width: 95%;
-  text-align: justify;
+  word-wrap: break-word;
+  text-align: left;
   text-justify: inter-word;
   font-size: 20px;
 }

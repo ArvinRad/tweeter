@@ -8,8 +8,10 @@ $(document).ready(function() {
       if (event.key === "Backspace") count--;
       else count++;
       $("#counter").html(140 - count)
-      if (count > 140) $('#counter').css('color', 'red')
-      else $('#counter').css('color', '#545149');
+      if (count > 140) {
+        $("#tweet-text").blur();
+        alert("You exceeded 140 character.")
+      }
     }
   });
 });

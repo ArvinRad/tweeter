@@ -70,16 +70,20 @@ $(document).ready(function(){
       // Get the Text from Form into client.
       console.log('Submit clicked, performing ajax call...');
       const text = $(".title-text").serialize();
+      console.log("this is text:",text);
       event.preventDefault();
-      // Submit the data to the server
-      $.ajax('/tweets', { method: 'POST', data: text})
-      .then(() => {
-        console.log("The post was successful.");
-        $loadTweets();
-        $("#counter").html(140)
-        $button.trigger("reset");
-      }).catch(err => console.log(err));
-      // Retrive completed new tweet from server
+      console.log($('#counter').html());
+      if($('#counter').html() < 140 && $('#counter').html() > 0) {
+        // Submit the data to the server
+        $.ajax('/tweets', { method: 'POST', data: text})
+        .then(() => {
+          console.log("The post was successful.");
+          // Retrive completed new tweet from server
+          $loadTweets();
+          $("#counter").html(140)
+          $button.trigger("reset");
+        }).catch(err => console.log(err));
+      } else alert("Please include your tweet text.")
     });
   });
 
