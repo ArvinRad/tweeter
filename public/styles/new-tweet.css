@@ -13,34 +13,34 @@
 .title-text {
   display: flex;
   width: 100%;
-  flex-direction: row;
+  flex-direction: column;
   align-content: space-between;
-  align-items: flex-end;
-  font-size: 24px;
+  align-items: flex-start;
+  font-size: 20px;
 }
 
 .textbox {
   display:flex;
   height: 50px;
-  width: 1100px;
+  width: 100%;
   border: none;
   background-color: inherit;
   color:blue;
   align-items: stretch;
 }
 
-hr {
-  /* width: 100%; */
+.hrn {
+  width: 100%;
   border-width: 5px;
   border-color: rgba(18, 19, 11, 0.26);
 }
 
 .underneath {
   display: flex;
+  width: 100%;
   flex-direction: row;
   justify-content: space-between;
   font-family: Bungee;
-
 }
 
 .botton {

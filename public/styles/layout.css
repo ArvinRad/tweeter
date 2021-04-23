@@ -17,9 +17,11 @@ html {
 body {
   color: #545149;
   width: 100%;
+  /* max-width: 1000px; */
   background-color: #f4f1ec;
   font-size: 24px;
   font-family: Source Sans Pro;
+  margin: auto;
 }
 
 
@@ -29,7 +31,7 @@ body {
 
 .container {
   width: 90%;
-  margin-left: 5%;
   text-align: center;
   align-items: center;
+  margin-left: 5%;
 }
