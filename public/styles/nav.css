@@ -3,6 +3,8 @@ Styling the Navigation bar
 */
 .navbar {
   flex: 1;
+  position: fixed;
+  top: 0;
   height: 120px;
   width: 100%;
   color: #FFFF;

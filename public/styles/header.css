@@ -11,6 +11,7 @@ Styling the Header
   flex-wrap: wrap;
   align-items: center;
   flex-direction: column;
+  margin-top: 120px;
 }
 
 .avatar {
