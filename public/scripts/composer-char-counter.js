@@ -12,11 +12,4 @@ $(document).ready(function() {
       else $('#counter').css('color', '#545149');
     }
   });
-  // const list = document.querySelectorAll("div.tweettime");
-  // console.log(list);
-  // for (item of list) {
-  //   const date = $(`${item}`).html();
-  //   const result = $(`${item}`).html($.timeago(new Date(date)));
-  //   console.log(item, date, result)
-  // }
 });

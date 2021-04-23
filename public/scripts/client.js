@@ -1,3 +1,5 @@
+//const dateAdjust = require("../../server/lib/date-adjust")
+
 /*
  * Client-side JS logic goes here
  * jQuery is already loaded
@@ -44,11 +46,55 @@ const createTweetElement = function (data) {
       <div><i class="fas fa-flag tweet1Icon"></i><i class="fas fa-retweet tweet1Icon"></i><i class="fas fa-heart tweet1Icon"></i></div>
     </footer>
   </article>
-          `
+  `
 }
+$loadTweets = function() {
+  $.ajax('/tweets', { method: 'GET' })
+  .then(Tweets => {
+    console.log('Success: ', Tweets);
+    Tweets.forEach(item => {
+      const $tweet = createTweetElement(item);
+      $('.tweetsContainer').prepend($tweet);
+    });
+  }).catch(err => console.log(err));
+}
+
 $(document).ready(function(){
-  data.forEach(item => {
-    const $tweet = createTweetElement(item);
-    $('.tweetsContainer').append($tweet);
+
+  $loadTweets();
+
+  $(function() {
+    // Listen to submit buttom:
+    const $button = $('.title-text');
+    $button.submit(function (event) {
+      // Get the Text from Form into client.
+      console.log('Submit clicked, performing ajax call...');
+      const text = $(".title-text").serialize();
+      event.preventDefault();
+      // Submit the data to the server
+      $.ajax('/tweets', { method: 'POST', data: text})
+      .then(() => {
+        console.log("The post was successful.");
+        $loadTweets();
+        $("#counter").html(140)
+        $button.trigger("reset");
+      }).catch(err => console.log(err));
+      // Retrive completed new tweet from server
+    });
   });
+
+  // $( ".title-text" ).submit(function( event ) {
+  //   let text = $(".title-text").serialize();
+  //   event.preventDefault();
+  //   $.ajax({
+  //     url: '/tweets',
+  //     method: 'POST',
+  //     data: text
+  //   })
+  //   .then(() => {
+  //     console.log("The post was successful.");
+  //     //createTweetElement(newTweet)
+  //   }).catch(err =>
+  //     console.log(err));
+  // })
 })

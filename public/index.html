@@ -55,7 +55,7 @@
     <main class="container">
       <section class="new-tweet">
         <h2>Compose Tweet</h2>
-        <form class="title-text">
+        <form class="title-text" method="POST" action="/tweets">
           <label for="tweet-text"><strong> What are you humming about?</strong></label>
           <textarea class="textbox" placeholder="..type here ..."  name="text" id="tweet-text"></textarea>
           <hr class="hrn">
@@ -69,8 +69,8 @@
           </div>
         </form>
       </section>
+      <h3>Recent Tweets</h3>
       <section class="tweetsContainer">
-          <h3>Recent Tweets</h3>
       </section>
       </main>
   </body>
