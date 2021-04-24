@@ -2,16 +2,13 @@
 
 $(document).ready(function() {
   console.log("Document is ready.");
-  let count = 0;
-  $("#tweet-text").on('keydown', function(event) {
-    if(event.key) {
-      if (event.key === "Backspace") count--;
-      else count++;
-      $("#counter").html(140 - count)
-      if (count > 140) {
-        $("#tweet-text").blur();
-        alert("You exceeded 140 character.")
-      }
+  $("#tweet-text").attr('maxlength','140');
+  $('#tweet-text').keydown(function(){
+    const str = $('#tweet-text').val();
+    $('#counter').html(140 - str.length);
+    if(str.length === 140) {
+      $(".Errorbox").html("You have reached the maximum length. Please modify your text or tweet it.").show();
+      setTimeout(() => $(".Errorbox").hide(), 5000);
     }
   });
 });

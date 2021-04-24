@@ -60,7 +60,7 @@ $loadTweets = function() {
 }
 
 $(document).ready(function(){
-
+  $(".Errorbox").hide();
   $loadTweets();
 
   $(function() {
@@ -70,35 +70,25 @@ $(document).ready(function(){
       // Get the Text from Form into client.
       console.log('Submit clicked, performing ajax call...');
       const text = $(".title-text").serialize();
-      console.log("this is text:",text);
       event.preventDefault();
-      console.log($('#counter').html());
-      if($('#counter').html() < 140 && $('#counter').html() > 0) {
+      if($('#counter').html() < 140) {
         // Submit the data to the server
         $.ajax('/tweets', { method: 'POST', data: text})
         .then(() => {
           console.log("The post was successful.");
           // Retrive completed new tweet from server
-          $loadTweets();
+          $.ajax('/tweets', { method: 'GET' })
+          .then(Tweets => {
+            const $tweet = createTweetElement(Tweets[Tweets.length - 1]);
+            $('.tweetsContainer').prepend($tweet);
+          }).catch(err => console.log(err));
           $("#counter").html(140)
           $button.trigger("reset");
         }).catch(err => console.log(err));
-      } else alert("Please include your tweet text.")
+      } else {
+        $(".Errorbox").html("Please include your tweet text and press any key").show();
+        setTimeout(() => $(".Errorbox").hide(), 5000);
+      }
     });
   });
-
-  // $( ".title-text" ).submit(function( event ) {
-  //   let text = $(".title-text").serialize();
-  //   event.preventDefault();
-  //   $.ajax({
-  //     url: '/tweets',
-  //     method: 'POST',
-  //     data: text
-  //   })
-  //   .then(() => {
-  //     console.log("The post was successful.");
-  //     //createTweetElement(newTweet)
-  //   }).catch(err =>
-  //     console.log(err));
-  // })
 })

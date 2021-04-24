@@ -36,6 +36,15 @@ Styling the Navigation bar
 .item2 {
   color: red;
   font-size: 30px;
+  position: relative;
+  animation-name: example;
+  animation-duration: 2s;
+  animation-iteration-count: infinite;
+}
+
+@keyframes example {
+  50%   {color:red; bottom:10px;}
+  50%  {color:yellow; top:10px;}
 }
 
 .item {
@@ -44,6 +53,5 @@ Styling the Navigation bar
   align-items: center;
   margin-right: 1.5em;
 }
-
 
 

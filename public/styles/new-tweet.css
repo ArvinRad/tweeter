@@ -1,13 +1,26 @@
 /* Styling the Tweet Form */
 
 .new-tweet {
-  width: 100%;
+  width: 90%;
   display: flex;
   flex-wrap: wrap;
   flex-direction: column;
   align-items: center;
 
 
+}
+
+.Errorbox {
+  display: flex;
+  margin-top: -2%;
+  height: 20px;
+  width: 100%;
+  border: 2px solid red;
+  background-color: inherit;
+  color: red;
+  justify-content: center;
+  align-items: center;
+  font-size: 18px;
 }
 
 .title-text {
