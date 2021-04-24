@@ -16,7 +16,7 @@ This is a small front-end application using JQuery ans AJAX for my ptactice as a
 
 ## Project Screenshots
 
-- First screenshot at (../public/image/screenshot1.png)
-- Second screenshot at (../public/image/screenshot2.png)
+- First screenshot at https://github.com/ArvinRad/tweeter/blob/master/public/images/Screenshot1.png
+- Second screenshot at https://github.com/ArvinRad/tweeter/blob/master/public/images/Screenshot2.png
 
 
